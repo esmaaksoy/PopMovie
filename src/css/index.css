@@ -1,0 +1,189 @@
+@import "./theme.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 60px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   NAVBAR                                   */
+/* -------------------------------------------------------------------------- */
+
+nav {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.63),
+    rgba(255, 255, 255, 0)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 105px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 210px);
+  height: 50px;
+  border-radius: 4px;
+  z-index: 100;
+  padding-inline: 22.5px;
+}
+nav p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  color: #24123a;
+}
+nav section {
+  display: flex;
+  text-align: center;
+  gap: 1rem;
+}
+nav section a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.5px;
+  color: #707cb4;
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    HOME                                    */
+/* -------------------------------------------------------------------------- */
+
+header {
+  height: 590px;
+  position: relative;
+}
+header .container {
+  position: absolute;
+  bottom: 45px;
+  display: flex;
+  justify-content: space-between;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 90px);
+}
+header img {
+  width: 100%;
+  height: 100%;
+}
+header .text {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  line-height: 30.48px;
+  text-align: center;
+}
+header .text p:first-child {
+  font-weight: 400;
+}
+header .text p:nth-child(2) {
+  font-weight: 700;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  MovieCard                                 */
+/* -------------------------------------------------------------------------- */
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 238px;
+  height: 417px;
+  align-items: end;
+  background-color: rgba(0, 0, 0, 0.57);
+  cursor: pointer;
+ 
+}
+.card {
+  width: 238px;
+  height: 417px;
+  position: relative;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.57);
+}
+.card img {
+  width: 100%;
+  height: 100%;
+}
+.card .title {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.69);
+  width: 238px;
+  height: 96px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .title p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 19.5px;
+  text-align: center;
+  color: #ffffff;
+}
+.average {
+  width: 93px;
+  height: 34px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.average p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19.5px;
+  text-align: center;
+  color: #000000;
+}
+.movieContainer {
+  margin: 45px;
+}
+.movieContainer p {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30.48px;
+  color: #000000;
+  text-align: center;
+}
+.movieCard {
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr); */
+  /* row-gap: 2rem; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Footer                                   */
+/* -------------------------------------------------------------------------- */
+footer {
+  background: #24123a;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.94px;
+  text-align: center;
+  color: #ffffff;
+  margin: 105px;
+}

@@ -1,0 +1,28 @@
+:root {
+  /* Purple Shades */
+  --color-purple-dark: #2c173c;
+  --color-purple-medium: #523f5f;
+  --color-purple-light: #a59aac;
+
+  /* Black Shades */
+  --color-black-dark: #1b002a;
+  --color-black-medium: #1a0029;
+  --color-black-light: #190027;
+
+  /* Pink Shades */
+  --color-pink-dark: #220f32;
+  --color-pink-medium: #352441;
+  --color-pink-light: #504458;
+
+  /* Indigo Shades */
+  --color-indigo-dark: #2b0534;
+  --color-indigo-medium: #24123a;
+  --color-indigo-light: #520041;
+
+  /* Lavender Shades */
+  --color-lavender-dark: #392e5b;
+  --color-lavender-light: #a20040;
+
+  /* Gray Shades */
+  --color-gray-dark: #707cb4;
+}

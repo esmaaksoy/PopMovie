@@ -1,9 +1,13 @@
-import React from 'react'
-
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <nav>
+      <p>Logo</p>
+      <section>
+        <a href="#tv-series">Popular TV Series</a>
+       <a href="#movies">Popular Movies</a>
+      </section>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
