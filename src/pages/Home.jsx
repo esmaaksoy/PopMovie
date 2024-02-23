@@ -29,12 +29,14 @@ const Home = () => {
   }, []);
 
 // A random item has been selected for the movie 
-  const randomIndexMovie = Math.floor(Math.random() * movie.length);
-  const randomItemMovie = movie[randomIndexMovie];
+const movieWithScore = movie.filter(item=>item.vote_average >= 7)
+  const randomIndexMovie = Math.floor(Math.random() * movieWithScore.length);
+  const randomItemMovie = movieWithScore[randomIndexMovie];
 
 // A random item has been selected for the serie 
-  const randomIndexSerie = Math.floor(Math.random() * series.length);
-  const randomItemSerie = movie[randomIndexSerie];
+const serieWithScore = series.filter(item=>item.vote_average >= 7)
+  const randomIndexSerie = Math.floor(Math.random() * serieWithScore.length);
+  const randomItemSerie = serieWithScore[randomIndexSerie];
 
   return (
     <>

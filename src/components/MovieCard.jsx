@@ -9,7 +9,8 @@ const MovieCard = ({ title, vote_average, poster_path, id, name }) => {
     <div className="cardContainer" onClick={() => navigate(`/details/${id}`)}>
       <div className="average">
         <p>
-          <span>{vote_average?.toFixed(1)}</span>/10
+          <span>{vote_average?.toFixed(1)}</span>
+          /10
         </p>
       </div>
       <div className="card">
