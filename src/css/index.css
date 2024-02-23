@@ -206,6 +206,17 @@ footer a{
   background-color: var(--color-black-dark);
   color: white;
   min-height: screen;
+  position: relative;
+}
+.homeIcon{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+cursor: pointer;
+  align-items: center;
 }
 .detail .movie{
   display: flex;
@@ -289,7 +300,8 @@ border-radius: 0.5rem;
   color: var(--color-purple-light);
 }
 .video{
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
+height: 800px;
+}
+.player{
+  object-fit: cover;
 }

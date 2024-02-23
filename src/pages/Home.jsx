@@ -3,6 +3,7 @@ import bg from "../assets/headerBG.png";
 import MovieCard from "../components/MovieCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 const Home = () => {
   const [movie, setMovie] = useState([]);
   const [series, setSeries] = useState([]);
@@ -32,18 +33,22 @@ const Home = () => {
     getSeries();
   }, []);
 
-  // A random item has been selected for the movie
+  // A random item has been selected for the movies
   const movieWithScore = movie.filter((item) => item.vote_average >= 7);
   const randomIndexMovie = Math.floor(Math.random() * movieWithScore.length);
   const randomItemMovie = movieWithScore[randomIndexMovie];
 
-  // A random item has been selected for the serie
+  // A random item has been selected for the series
   const serieWithScore = series.filter((item) => item.vote_average >= 7);
   const randomIndexSerie = Math.floor(Math.random() * serieWithScore.length);
   const randomItemSerie = serieWithScore[randomIndexSerie];
 
   return (
     <>
+      <Helmet>
+        <title>Home | Movie App</title>
+        <meta name="description" content="Home Page" />
+      </Helmet>
       <Navbar />
       <header>
         <img src={bg} alt="image" />
