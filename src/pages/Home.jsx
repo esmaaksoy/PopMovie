@@ -12,14 +12,18 @@ const Home = () => {
 
   // Function to fetch popular movies
   const getMovies = async () => {
-    const { data } = await axios(movieUrl);
-    setMovie(data.results);
+    try {
+      const { data } = await axios(movieUrl);
+      setMovie(data.results);
+    } catch (error) {}
   };
 
   // Function to fetch popular TV series
   const getSeries = async () => {
-    const { data } = await axios(seriesUrl);
-    setSeries(data.results);
+    try {
+      const { data } = await axios(seriesUrl);
+      setSeries(data.results);
+    } catch (error) {}
   };
 
   // Fetch popular movies and TV series when the page loads
@@ -28,13 +32,13 @@ const Home = () => {
     getSeries();
   }, []);
 
-// A random item has been selected for the movie 
-const movieWithScore = movie.filter(item=>item.vote_average >= 7)
+  // A random item has been selected for the movie
+  const movieWithScore = movie.filter((item) => item.vote_average >= 7);
   const randomIndexMovie = Math.floor(Math.random() * movieWithScore.length);
   const randomItemMovie = movieWithScore[randomIndexMovie];
 
-// A random item has been selected for the serie 
-const serieWithScore = series.filter(item=>item.vote_average >= 7)
+  // A random item has been selected for the serie
+  const serieWithScore = series.filter((item) => item.vote_average >= 7);
   const randomIndexSerie = Math.floor(Math.random() * serieWithScore.length);
   const randomItemSerie = serieWithScore[randomIndexSerie];
 

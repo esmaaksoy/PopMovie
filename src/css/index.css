@@ -30,7 +30,7 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 210px);
-  height: 50px;
+  min-height: 50px;
   border-radius: 4px;
   z-index: 100;
   padding-inline: 22.5px;
@@ -39,7 +39,7 @@ nav {
 }
 nav .logo {
   font-size: 25px;
-  line-height: 30.48px;
+
   color: #24123a;
 }
 nav section {
@@ -48,7 +48,7 @@ nav section {
 }
 nav section a {
   font-size: 16px;
-  line-height: 19.5px;
+
   color: #707cb4;
   text-decoration: none;
 }
@@ -58,7 +58,7 @@ nav section a {
 /* -------------------------------------------------------------------------- */
 
 header {
-  height: 590px;
+  min-height: 590px;
   position: relative;
 }
 header .container {
@@ -78,7 +78,7 @@ header .text {
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
   font-size: 25px;
-  line-height: 30.48px;
+
   text-align: center;
 }
 header .text p:first-child {
@@ -96,7 +96,7 @@ header .text p:nth-child(2) {
   display: flex;
   flex-direction: column;
   width: 238px;
-  height: 417px;
+  min-height: 417px;
   align-items: end;
   background-color: rgba(0, 0, 0, 0.57);
   cursor: pointer;
@@ -104,7 +104,7 @@ header .text p:nth-child(2) {
 }
 .card {
   width: 238px;
-  height: 417px;
+  min-height: 417px;
   position: relative;
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.57);
 }
@@ -116,7 +116,7 @@ header .text p:nth-child(2) {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.69);
   width: 238px;
-  height: 96px;
+  min-height: 96px;
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -125,13 +125,13 @@ header .text p:nth-child(2) {
 .card .title p {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  line-height: 19.5px;
+
   text-align: center;
   color: #ffffff;
 }
 .average {
   width: 93px;
-  height: 34px;
+  min-height: 34px;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
@@ -141,7 +141,7 @@ header .text p:nth-child(2) {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 16px;
-  line-height: 19.5px;
+
   text-align: center;
   color: #000000;
 }
@@ -151,7 +151,7 @@ header .text p:nth-child(2) {
 .movieContainer p {
   font-weight: 700;
   font-size: 25px;
-  line-height: 30.48px;
+
   color: #000000;
   text-align: center;
 }
@@ -171,7 +171,7 @@ header .text p:nth-child(2) {
 /* -------------------------------------------------------------------------- */
 footer {
   background: #24123a;
-  height: 75px;
+  min-height: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -181,7 +181,7 @@ footer p {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 18px;
-  line-height: 21.94px;
+
   text-align: center;
   color: #ffffff;
   /* margin: 45px; */
@@ -189,9 +189,107 @@ footer p {
 footer a{
   font-weight: 400;
   font-size: 16px;
-  line-height: 19.5px;
+
   text-decoration: none;
   text-align: center;
   color: #ffffff;
  margin-right: 1rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Details Page                                */
+/* -------------------------------------------------------------------------- */
+.detail{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: var(--color-black-dark);
+  color: white;
+  min-height: screen;
+}
+.detail .movie{
+  display: flex;
+  max-height: 600px;
+  gap: 2rem;
+  padding: 2rem;
+}
+.detail .movie .image{
+  flex: 1;
+}
+.detail .movie img{
+ width: 100%;
+ height: 100%;
+ border-radius: 0.5rem;
+}
+.detail .movie .info{
+  flex: 1;
+}
+.detail .movie .info-title{
+ display: flex;
+ align-items: end;
+ gap: 4rem;
+ margin-bottom: 22.5px;
+}
+.detail .movie .title{
+font-size: 32px;
+}
+.detail .movie .date{
+font-size: 24px;
+}
+.genres{
+ margin-bottom: 22.5px;
+  }
+.genres button{
+background-color: #000000;
+padding-inline: 1rem;
+padding-block: 0.5rem;
+color: white;
+margin-right: 22.5px;
+border: 1px solid white;
+border-radius: 0.5rem;
+}
+.vote{
+  display: flex;
+  gap: 2rem;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding-block: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: var(--color-purple-light);
+}
+.vote .content{
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+.overView{
+  padding-block:22.5px ;
+  border-bottom: 1px solid white;
+  color: var(--color-purple-light);
+}
+.overView p:first-child{
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: white;
+}
+.companies{
+  margin-top: 22.5px;
+
+}
+.companies > p:first-child{
+  margin-bottom:0.5rem;
+  font-weight: 700;
+}
+.companies .companyNames{
+  display: flex;
+  gap:1rem;
+  color: var(--color-purple-light);
+}
+.video{
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
 }
