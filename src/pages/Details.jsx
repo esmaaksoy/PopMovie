@@ -5,9 +5,8 @@ import ReactPlayer from "react-player";
 import defaultImage from "../assets/defaultImage.png";
 import { Helmet } from "react-helmet";
 import { LuPopcorn } from "react-icons/lu";
-
 const Details = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   // Added code to extract the 'id' parameter from the URL using useParams.
   const { id } = useParams();
 
@@ -50,7 +49,6 @@ const Details = () => {
     release_date,
     production_companies,
     overview,
-    vote_count,
     vote_average,
     spoken_languages,
     runtime,
@@ -60,7 +58,6 @@ const Details = () => {
   const hours = Math.floor(runtime / 60);
   const minutes = runtime % 60;
   const formattedRuntime = `${hours}h ${minutes}min`;
-
   return (
     <>
       <Helmet>
@@ -68,14 +65,14 @@ const Details = () => {
         <meta name="description" content="Movie Detail Page" />
       </Helmet>
       <div className="detail">
-        <div className="homeIcon" onClick={()=>navigate("/")}>
-        <LuPopcorn />
-        <p>Home</p>
+        <div className="homeIcon" onClick={() => navigate("/")}>
+          <LuPopcorn className="icon" />
+          <p>Home</p>
         </div>
         <div className="movie">
           <div className="image">
             <img
-              alt="Guitar"
+              alt="movie"
               src={poster_path ? IMG_API + poster_path : defaultImage}
             />
           </div>
@@ -95,9 +92,12 @@ const Details = () => {
                 <p className="content">{vote_average?.toFixed(1)} / 10</p>
                 <p>Average</p>
               </div>
+
               <div>
-                <p className="content">{vote_count}</p>
-                <p>Count</p>
+                {spoken_languages?.slice(0, 1).map((item) => (
+                  <p className="content">{item?.name}</p>
+                ))}
+                <p>Langues</p>
               </div>
               <div>
                 <p className="content">{formattedRuntime}</p>
@@ -108,7 +108,6 @@ const Details = () => {
               <p>Overview</p>
               <p>{overview}</p>
             </div>
-
             <div className="companies">
               <p>Production Companies</p>
               <div className="companyNames">
@@ -117,25 +116,13 @@ const Details = () => {
                 ))}
               </div>
             </div>
-
-            <div className="companies">
-              <p>Langues</p>
-              <div className="companyNames">
-                {" "}
-                {spoken_languages?.slice(0, 3).map((item) => (
-                  <p>{item?.name}</p>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
-
         <div className="video">
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${video}`}
             width="100%"
             height="100%"
-            className="player"
           />
         </div>
       </div>

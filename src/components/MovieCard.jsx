@@ -2,9 +2,10 @@ import { useNavigate } from "react-router-dom";
 import defaultImage from "../assets/defaultImage.png";
 
 const MovieCard = ({ title, vote_average, poster_path, id, name }) => {
+
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
   const navigate = useNavigate();
-  
+
   return (
     <div className="cardContainer" onClick={() => navigate(`/details/${id}`)}>
       <div className="average">

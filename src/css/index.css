@@ -1,6 +1,5 @@
 @import "./theme.css";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -48,7 +47,6 @@ nav section {
 }
 nav section a {
   font-size: 16px;
-
   color: #707cb4;
   text-decoration: none;
 }
@@ -60,6 +58,7 @@ nav section a {
 header {
   min-height: 590px;
   position: relative;
+  background-color: #2b0534;
 }
 header .container {
   position: absolute;
@@ -70,9 +69,11 @@ header .container {
   transform: translateX(-50%);
   width: calc(100% - 90px);
 }
-header img {
+header > img {
   width: 100%;
   height: 100%;
+  filter: saturate(40%) brightness(150%) hue-rotate(270deg);
+  opacity: 0.5;
 }
 header .text {
   color: #ffffff;
@@ -100,7 +101,6 @@ header .text p:nth-child(2) {
   align-items: end;
   background-color: rgba(0, 0, 0, 0.57);
   cursor: pointer;
- 
 }
 .card {
   width: 238px;
@@ -175,91 +175,97 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
- padding-inline: 45px;
+  padding-inline: 45px;
 }
 footer p {
-  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 18px;
-
   text-align: center;
   color: #ffffff;
-  /* margin: 45px; */
 }
-footer a{
+footer a {
   font-weight: 400;
   font-size: 16px;
 
   text-decoration: none;
   text-align: center;
   color: #ffffff;
- margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                Details Page                                */
 /* -------------------------------------------------------------------------- */
-.detail{
+.detail {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   background-color: var(--color-black-dark);
   color: white;
-  min-height: screen;
   position: relative;
 }
-.homeIcon{
+.homeIcon {
   position: absolute;
   top: 1rem;
   right: 1rem;
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-cursor: pointer;
+  cursor: pointer;
   align-items: center;
+  background-color: var(--color-lavender-light);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
-.detail .movie{
+.homeIcon .icon {
+  font-size: 2rem;
+}
+.detail .movie {
   display: flex;
-  max-height: 600px;
+  /* max-height: 600px; */
   gap: 2rem;
   padding: 2rem;
 }
-.detail .movie .image{
+.detail .movie .image {
+  flex: 0.5;
+}
+.detail .movie img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+}
+.detail .movie .info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.detail .movie img{
- width: 100%;
- height: 100%;
- border-radius: 0.5rem;
+.detail .movie .info-title {
+  display: flex;
+  align-items: end;
+  gap: 4rem;
+  margin-bottom: 22.5px;
 }
-.detail .movie .info{
-  flex: 1;
+.detail .movie .title {
+  font-size: 32px;
 }
-.detail .movie .info-title{
- display: flex;
- align-items: end;
- gap: 4rem;
- margin-bottom: 22.5px;
+.detail .movie .date {
+  font-size: 24px;
 }
-.detail .movie .title{
-font-size: 32px;
+.genres {
+  margin-bottom: 22.5px;
+  display: flex;
+  gap: 1rem;
 }
-.detail .movie .date{
-font-size: 24px;
+.genres button {
+  background-color: #000000;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  color: white;
+  border: 1px solid white;
+  border-radius: 0.5rem;
 }
-.genres{
- margin-bottom: 22.5px;
-  }
-.genres button{
-background-color: #000000;
-padding-inline: 1rem;
-padding-block: 0.5rem;
-color: white;
-margin-right: 22.5px;
-border: 1px solid white;
-border-radius: 0.5rem;
-}
-.vote{
+.vote {
   display: flex;
   gap: 2rem;
   border-top: 1px solid white;
@@ -270,38 +276,90 @@ border-radius: 0.5rem;
   text-align: center;
   color: var(--color-purple-light);
 }
-.vote .content{
+.vote .content {
   font-size: 24px;
   margin-bottom: 0.5rem;
   color: white;
 }
-.overView{
-  padding-block:22.5px ;
+.overView {
+  padding-block: 22.5px;
   border-bottom: 1px solid white;
   color: var(--color-purple-light);
 }
-.overView p:first-child{
+.overView p:first-child {
   font-size: 24px;
   margin-bottom: 0.5rem;
   font-weight: 700;
   color: white;
 }
-.companies{
-  margin-top: 22.5px;
 
+.companies {
+  margin-top: 22.5px;
 }
-.companies > p:first-child{
-  margin-bottom:0.5rem;
+.companies > p:first-child {
+  margin-bottom: 0.5rem;
   font-weight: 700;
 }
-.companies .companyNames{
+.companies .companyNames {
   display: flex;
-  gap:1rem;
+  gap: 1rem;
   color: var(--color-purple-light);
 }
-.video{
-height: 800px;
+.video {
+  height: 800px;
 }
-.player{
-  object-fit: cover;
+/* -------------------------------------------------------------------------- */
+/*                                 RESPONSİVE                                 */
+/* -------------------------------------------------------------------------- */
+@media screen and (max-width: 1085px) {
+  body {
+    margin: 22.5px;
+  }
+}
+@media screen and (max-width: 820px) {
+  .detail .movie {
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  footer {
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 0.8rem;
+  }
+  footer p {
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .detail .movie {
+    flex-direction: column;
+  }
+  .video {
+    height: 300px;
+  }
+  .vote .content {
+    font-size: 16px;
+  }
+  .genres {
+    flex-direction: column;
+  }
+  .detail .movie .info-title {
+    gap: 2rem;
+    align-items: center;
+  }
+  .detail .movie .title {
+    font-size: 24px;
+  }
+  .detail .movie .date {
+    font-size: 16px;
+  }
+  .vote {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .companies .companyNames {
+    flex-direction: column;
+  }
 }
