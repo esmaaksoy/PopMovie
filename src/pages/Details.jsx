@@ -73,7 +73,7 @@ const Details = () => {
   return (
     <>
       <Helmet>
-        <title>Detail | Movie App</title>
+        <title>Movie | Movie App</title>
         <meta name="description" content="Movie Detail Page" />
       </Helmet>
       <div className="detailPage">
@@ -82,11 +82,14 @@ const Details = () => {
           <p>Home</p>
         </div>
         <div className="video">
-          <ReactPlayer
+          {video.length==0 ? <ReactPlayer
             url={`https://www.youtube.com/watch?v=${video}`}
             width="100%"
             height="100%"
-          />
+          /> : <div>
+        <p>Sorry</p>
+       </div>}
+       
         </div>
         <div className="movie">
           <div className="image">

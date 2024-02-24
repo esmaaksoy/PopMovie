@@ -4,6 +4,7 @@
 @import "./detail.css";
 @import "./movieCard.css";
 @import "./movieDetail.css";
+@import "./notFound.css";
 * {
   margin: 0;
   padding: 0;
