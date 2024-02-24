@@ -40,7 +40,6 @@ PopMovie (folder)
 │    ├── pages
 │    │     ├── Details.jsx
 │    │     ├── Home.jsx
-│    │     ├── MovieDetails.tsx
 │    │     ├── NotFound.jsx
 │    ├── router
 │    │     └── AppRouter.jsx
