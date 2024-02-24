@@ -4,9 +4,9 @@ The popMovie website is an application where you can discover popular movies and
 
 ## Project Outcome
 
-![Project gif](./popMovie.gif)
+![Project gif](./src/assets/popMovie.gif)
 
-[PopMovie Live Page]()
+[PopMovie Live Page](https://popmovie-esma.netlify.app/)
 
 ## Project Skeleton
 
@@ -67,6 +67,8 @@ PopMovie (folder)
 - **React Player**
   React Player is used to play media content (video and audio files) in React applications. It supports various media sources and formats.
   react-router-dom
+- **OpenGraph Integration**
+  OpenGraph tags are meta tags used to determine how web pages will appear when shared on social media platforms. This addition enhances the appearance and information provided in social media shares of the project.
 
 ## Getting Started
 

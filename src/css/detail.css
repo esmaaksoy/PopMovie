@@ -7,15 +7,15 @@
   position: relative;
   .video {
     height: 600px;
-    border-radius: 0 0  15rem 0;
+    border-radius: 0 0 15rem 0;
     overflow: hidden;
-    .noData{
+    .noData {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 600px;
       background-color: var(--color-purple-light);
-      p{
+      p {
         font-size: 32px;
       }
     }
@@ -42,7 +42,7 @@
   .movie {
     display: flex;
     gap: 2rem;
-     padding: 5rem;
+    padding: 5rem;
     .image {
       flex: 0.5;
       height: 500px;
@@ -108,11 +108,8 @@
           color: var(--color-white);
         }
       }
-   
     }
   }
-
-
 }
 /* -------------------------------------------------------------------------- */
 /*                                  Animation                                 */
@@ -165,19 +162,18 @@
       .companies {
         .companyNames {
           flex-direction: column;
-          >p:first-child{
+          > p:first-child {
             border-right: none !important;
-
-           }
+          }
         }
       }
     }
     .video {
       height: 300px;
-      border-radius: 0 0  8rem 0;
-      .noData{
+      border-radius: 0 0 8rem 0;
+      .noData {
         height: 300px;
-        p{
+        p {
           font-size: 25px;
         }
       }

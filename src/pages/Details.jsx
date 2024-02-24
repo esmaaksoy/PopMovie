@@ -6,22 +6,31 @@ import defaultImage from "../assets/defaultImage.png";
 import { Helmet } from "react-helmet";
 import { LuPopcorn } from "react-icons/lu";
 import MovieDetails from "../components/MovieDetails";
-const Details = () => {
-  const navigate = useNavigate();
-  // Added code to extract the 'id' parameter from the URL using useParams.
-  const { id } = useParams();
 
-  //Define state variables
+const Details = () => {
   const [movieDetail, setMovieDetail] = useState({});
   const [video, setVideo] = useState({});
   const [actor, setActor] = useState([]);
-
-  // Define API key and URLs for movie details and video
+  const navigate = useNavigate();
+  const { id } = useParams();
   const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
   const movieDetailUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
   const videoUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`;
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
   const movieActorUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`;
+  const {
+    title,
+    poster_path,
+    genres,
+    release_date,
+    production_companies,
+    overview,
+    vote_average,
+    spoken_languages,
+    runtime,
+    tagline,
+    production_countries,
+  } = movieDetail;
 
   // Function to fetch movie details,video data, cast data
   const getMovieDetail = async () => {
@@ -52,21 +61,6 @@ const Details = () => {
     getActor();
   }, []);
 
-  // Destructure movie details
-  const {
-    title,
-    poster_path,
-    genres,
-    release_date,
-    production_companies,
-    overview,
-    vote_average,
-    spoken_languages,
-    runtime,
-    tagline,
-    production_countries,
-  } = movieDetail;
-
   // Convert the total runtime in minutes to hours and minutes format.
   const hours = Math.floor(runtime / 60);
   const minutes = runtime % 60;
@@ -84,7 +78,7 @@ const Details = () => {
           <p>Home</p>
         </div>
         <div className="video">
-          {Object.keys(video).length === 0  ? (
+          {Object.keys(video).length === 0 ? (
             <div className="noData">
               <p>Sorry | No Video Found</p>
             </div>

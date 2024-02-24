@@ -7,13 +7,11 @@ const MovieDetails = ({
   production_countries,
 }) => {
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
-
   return (
     <div className="detailSection">
       <div className="detailContainer">
         <div>
           <p className="heading">Casts</p>
-
           <div className="casts">
             {actor.slice(0, 6).map((item, index) => (
               <div className="castCard" key={index}>

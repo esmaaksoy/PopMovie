@@ -9,12 +9,9 @@ const MovieCard = ({
   name,
   customClassName,
 }) => {
-  
-  //Variable declarations
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
   const { movieTitle, cards, averages } = customClassName;
   const navigate = useNavigate();
-
   return (
     <div className="cardContainer" onClick={() => navigate(`/details/${id}`)}>
       <div className={`average ${averages}`}>

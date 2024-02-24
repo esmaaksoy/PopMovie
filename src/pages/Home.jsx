@@ -4,9 +4,8 @@ import MovieCard from "../components/MovieCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Helmet } from "react-helmet";
-const Home = () => {
 
- // Variable declarations
+const Home = () => {
   const [movie, setMovie] = useState([]);
   const [series, setSeries] = useState([]);
   const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
@@ -22,8 +21,8 @@ const Home = () => {
     cards: "card2",
     averages: "average2",
   };
-  
-  // Function to fetch popular movies
+
+  // Function to fetch popular movies, popular TV series
   const getMovies = async () => {
     try {
       const { data } = await axios(movieUrl);
@@ -31,7 +30,6 @@ const Home = () => {
     } catch (error) {}
   };
 
-  // Function to fetch popular TV series
   const getSeries = async () => {
     try {
       const { data } = await axios(seriesUrl);
@@ -63,43 +61,48 @@ const Home = () => {
       </Helmet>
       <Navbar />
       <div className="home">
-      <header>
-        <img src={bg} alt="image" />
-        <div className="container">
-          <MovieCard {...randomItemMovie} customClassName={customClassName1} />
-          <div className="text">
-            <p>Welcome to the</p>
-            <p>World of TV Series & Movies</p>
+        <header>
+          <img src={bg} alt="image" />
+          <div className="container">
+            <MovieCard
+              {...randomItemMovie}
+              customClassName={customClassName1}
+            />
+            <div className="text">
+              <p>Welcome to the</p>
+              <p>World of TV Series & Movies</p>
+            </div>
+            <MovieCard
+              {...randomItemSerie}
+              customClassName={customClassName1}
+            />
           </div>
-          <MovieCard {...randomItemSerie} customClassName={customClassName1} />
+        </header>
+        <div className="movieContainer" id="movies">
+          <p>Populer Movies</p>
+          <div className="movieCard">
+            {movie.slice(0, 8).map((item, index) => (
+              <MovieCard
+                key={index}
+                {...item}
+                customClassName={customClassName2}
+              />
+            ))}
+          </div>
         </div>
-      </header>
-      <div className="movieContainer" id="movies">
-        <p>Populer Movies</p>
-        <div className="movieCard">
-          {movie.slice(0, 8).map((item, index) => (
-            <MovieCard
-              key={index}
-              {...item}
-              customClassName={customClassName2}
-            />
-          ))}
+        <div className="movieContainer" id="tv-series">
+          <p>Populer TV Series</p>
+          <div className="movieCard">
+            {series.slice(0, 8).map((item, index) => (
+              <MovieCard
+                key={index}
+                {...item}
+                customClassName={customClassName2}
+              />
+            ))}
+          </div>
         </div>
       </div>
-      <div className="movieContainer" id="tv-series">
-        <p>Populer TV Series</p>
-        <div className="movieCard">
-          {series.slice(0, 8).map((item, index) => (
-            <MovieCard
-              key={index}
-              {...item}
-              customClassName={customClassName2}
-            />
-          ))}
-        </div>
-      </div>
-      </div>
-     
     </>
   );
 };

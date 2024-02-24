@@ -1,4 +1,5 @@
 import logo from "../assets/pop.png";
+
 const NotFound = () => {
   return (
     <div className="notFound">
