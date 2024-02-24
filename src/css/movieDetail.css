@@ -1,0 +1,88 @@
+.detailSection {
+  padding-inline: 5rem;
+  padding-block-end: 3rem;
+  .heading {
+    font-size: 32px;
+    border-bottom: 1px solid var(--color-white);
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+  .detailContainer {
+    display: flex;
+    justify-content: space-between;
+    .casts {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      .castCard {
+        color: var(--color-white);
+        padding-block: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          margin-bottom: 1rem;
+        }
+        .castText {
+          
+          p:first-child {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+          }
+          p:nth-child(2) {
+            color: var(--color-purple-light);
+          }
+        }
+      }
+    }
+  }
+  .movieDetail {
+    flex: 1;
+    padding-block: 2rem;
+    .companies {
+      > p:first-child {
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+      }
+      margin-bottom: 5rem;
+      .companyNames {
+        display: flex;
+        gap: 1rem;
+        color: var(--color-purple-light);
+        > p:first-child {
+          border-right: 1px solid var(--color-white);
+          padding-right: 1rem;
+        }
+      }
+    }
+    .tagline {
+      font-family: "Whisper", cursive;
+      letter-spacing: 0.2rem;
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 1085px) {
+  .detailSection {
+    padding-inline: 2rem;
+    .detailContainer{
+      flex-direction: column;
+      gap: 5rem;
+      .casts {
+        grid-template-columns: repeat(2, 1fr);
+        .castCard{
+          align-items: center;
+          justify-content: center;
+          .castText{
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,10 @@
-.detail {
+.detailPage {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   background-color: var(--color-black);
   color: var(--color-white);
   position: relative;
-  /* margin: var(--margin-medium); */
-  padding: 5rem;
   .video {
     height: 600px;
     border-radius: 0 0  15rem 0;
@@ -29,13 +27,12 @@
     .icon {
       font-size: 2rem;
     }
-   
+    animation: moveUpDown 1s ease-in-out infinite alternate;
   }
   .movie {
     display: flex;
     gap: 2rem;
-    /* padding: 2rem; */
-    padding-top: 3rem;
+     padding: 5rem;
     .image {
       flex: 0.5;
       height: 500px;
@@ -93,7 +90,7 @@
       }
       .overView {
         padding-block: 22.5px;
-        border-bottom: 1px solid var(--color-white);
+        /* border-bottom: 1px solid var(--color-white); */
         color: var(--color-purple-light);
         p:first-child {
           font-size: 24px;
@@ -102,34 +99,36 @@
           color: var(--color-white);
         }
       }
-      .companies {
-        margin-top: 22.5px;
-        padding-block-end: 5rem;
-        > p:first-child {
-          margin-bottom: 0.5rem;
-          font-weight: 700;
-        }
-        .companyNames {
-          display: flex;
-          gap: 1rem;
-          color: var(--color-purple-light);
-        }
-      }
+   
     }
   }
 
-}
 
+}
+/* -------------------------------------------------------------------------- */
+/*                                  Animation                                 */
+/* -------------------------------------------------------------------------- */
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* -------------------------------------------------------------------------- */
+/*                                 Responsive                                 */
+/* -------------------------------------------------------------------------- */
 @media screen and (max-width: 820px) {
-  .detail {
-    margin: 0;
+  .detailPage {
     .movie {
       gap: 1rem;
+      padding: 2rem;
     }
   }
 }
 @media screen and (max-width: 640px) {
-  .detail {
+  .detailPage {
     .movie {
       flex-direction: column;
     }
@@ -157,6 +156,10 @@
       .companies {
         .companyNames {
           flex-direction: column;
+          >p:first-child{
+            border-right: none !important;
+
+           }
         }
       }
     }
