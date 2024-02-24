@@ -1,0 +1,32 @@
+footer {
+    background-color: var(--color-indigo-medium);
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 45px;
+    p {
+      font-weight: 700;
+      font-size: 18px;
+      text-align: center;
+      color: var(--color-white);
+    }
+    a {
+      font-weight: 400;
+      font-size: 16px;
+      text-decoration: none;
+      text-align: center;
+      color: var(--color-white);
+      margin-right: 1rem;
+    }
+  }
+  /* -------------------------------------------------------------------------- */
+  /*                              Responsive Design                             */
+  /* -------------------------------------------------------------------------- */
+  @media screen and (max-width: 640px) {
+    footer {
+      flex-direction: column;
+      gap: 1rem;
+      padding-block: 0.8rem;
+    }
+  }

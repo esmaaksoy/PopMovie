@@ -66,11 +66,11 @@
           font-size: 32px;
         }
         .date {
-          font-size: 24px;
+          font-size: 25px;
         }
       }
       .genres {
-        margin-bottom: 22.5px;
+        margin-bottom: var(--margin-small);
         display: flex;
         gap: 1rem;
         button {
@@ -93,17 +93,16 @@
         text-align: center;
         color: var(--color-purple-light);
         .content {
-          font-size: 24px;
+          font-size: 25px;
           margin-bottom: 0.5rem;
           color: var(--color-white);
         }
       }
       .overView {
         padding-block: 22.5px;
-        /* border-bottom: 1px solid var(--color-white); */
         color: var(--color-purple-light);
         p:first-child {
-          font-size: 24px;
+          font-size: 25px;
           margin-bottom: 0.5rem;
           font-weight: 700;
           color: var(--color-white);
@@ -147,7 +146,7 @@
         gap: 2rem;
         align-items: center;
         .title {
-          font-size: 24px;
+          font-size: 25px;
         }
         .date {
           font-size: 16px;
@@ -179,7 +178,7 @@
       .noData{
         height: 300px;
         p{
-          font-size: 24px;
+          font-size: 25px;
         }
       }
     }

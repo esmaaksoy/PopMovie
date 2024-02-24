@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+## PopMovie
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The popMovie website is an application where you can discover popular movies and TV shows. You can access details of the movie you want to watch if you wish.
 
-## Available Scripts
+## Project Outcome
 
-In the project directory, you can run:
+![Project gif](./popMovie.gif)
 
-### `yarn start`
+[PopMovie Live Page]()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Skeleton
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+PopMovie (folder)
+|
+|
+├── public
+│    └── index.html
+├── src
+│    ├── assets
+│    │    ├── avatar.png
+│    │    ├── defaultImage.png
+│    │    ├── headerBG.png
+│    │    └── pop.png
+│    ├── components
+│    │     ├──Footer.jsx
+│    │     └──MovieCard.jsx
+│    │     ├──MovieDetails.jsx
+│    │     └──Navbar.jsx
+│    │     └──ScroolToTop.jsx
+│    ├── css
+│    │     ├── detail.css
+│    │     ├── footer.css
+│    │     └── main.css
+│    │     ├── movieCard.css
+│    │     └── movieDetail.css
+│    │     └── navbar.css
+│    │     ├── notFound.css
+│    │     └── theme.css
+│    ├── pages
+│    │     ├── Details.jsx
+│    │     ├── Home.jsx
+│    │     ├── MovieDetails.tsx
+│    │     ├── NotFound.jsx
+│    ├── router
+│    │     └── AppRouter.jsx
+│    ├── App.js
+│    ├── index.js
+├── .env
+├── package-lock-json
+├── package.json
+└── README.md
+```
 
-### `yarn test`
+## Tech/framework used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **axios**
+  Axios is a JavaScript library used for making HTTP requests. It can work in both browsers and Node.js environments and provides a Promise-based API.
+  react
+- **React**
+  is a JavaScript library developed by Facebook. It is used to build user interface components and is a popular choice for developing single-page applications.
+  react-dom
+- **React Helmet**
+  React Helmet is used to dynamically manage title, meta description, and other header tags in React applications. It allows you to add customized title and meta information for each page.
+  react-icons
+- **React Icons** is used to include icons in React applications. It includes various icon sets and can be easily used through components.
+- **React Player**
+  React Player is used to play media content (video and audio files) in React applications. It supports various media sources and formats.
+  react-router-dom
 
-### `yarn build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This is an example of how to list things you need to use the software and how to install them.
 
-### `yarn eject`
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Get a free API Key at [https://www.themoviedb.org/documentation/api](https://www.themoviedb.org/documentation/api)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/esmaaksoy/PopMovie
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Create .env file in home directory.
+   ```sh
+   REACT_APP_MOVIE_API_KEY=ENTER YOUR themoviedb.org APIKEY
+   ```
+5. The project is ready, you can start using it now.
+   You can run:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   `npm start`
 
-## Learn More
+   Runs the app in the development mode.\
+   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## İMPORTANT NOTES !
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In the project, we were asked to display data with a score greater than 8 in the main section. However, upon checking the data within the API, the number of data points with a score greater than 8 was insufficient. For the sake of visual design, I opted to display data with a score greater than or equal to 7 in the main section

@@ -1,0 +1,50 @@
+nav {
+    background: linear-gradient(to right, var(--color-nav1), var(--color-nav2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 105px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 210px);
+    min-height: 50px;
+    border-radius: 4px;
+    z-index: 100;
+    padding-inline: var(--margin-small);
+    font-weight: 500;
+    text-align: center;
+    .logo {
+      font-size: 25px;
+      color: var(--color-indigo-medium);
+    }
+    section {
+      display: flex;
+      gap: 1rem;
+      a {
+        font-size: 16px;
+        color: var(--color-gray-dark);
+        text-decoration: none;
+      }
+    }
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                              Responsive Design                             */
+  /* -------------------------------------------------------------------------- */
+  @media screen and (max-width: 1085px) {
+    nav {
+      width: calc(100% - 135px);
+      top: var(--margin-medium);
+    }
+  }
+  
+  @media screen and (max-width: 640px) {
+    nav {
+      width: calc(100% - 45px);
+      .logo {
+        font-size: 16px;
+      }
+    }
+  }
+  
