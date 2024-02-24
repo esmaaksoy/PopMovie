@@ -13,6 +13,7 @@ const MovieDetails = ({
       <div className="detailContainer">
         <div>
           <p className="heading">Casts</p>
+
           <div className="casts">
             {actor.slice(0, 6).map((item, index) => (
               <div className="castCard" key={index}>

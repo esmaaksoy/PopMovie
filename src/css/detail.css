@@ -9,6 +9,16 @@
     height: 600px;
     border-radius: 0 0  15rem 0;
     overflow: hidden;
+    .noData{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 600px;
+      background-color: var(--color-purple-light);
+      p{
+        font-size: 32px;
+      }
+    }
   }
   .homeIcon {
     position: absolute;
@@ -166,6 +176,12 @@
     .video {
       height: 300px;
       border-radius: 0 0  8rem 0;
+      .noData{
+        height: 300px;
+        p{
+          font-size: 24px;
+        }
+      }
     }
   }
 }

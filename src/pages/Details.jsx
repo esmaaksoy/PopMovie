@@ -15,12 +15,14 @@ const Details = () => {
   const [movieDetail, setMovieDetail] = useState({});
   const [video, setVideo] = useState({});
   const [actor, setActor] = useState([]);
+
   // Define API key and URLs for movie details and video
   const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
   const movieDetailUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
   const videoUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`;
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
   const movieActorUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`;
+
   // Function to fetch movie details,video data, cast data
   const getMovieDetail = async () => {
     try {
@@ -82,14 +84,17 @@ const Details = () => {
           <p>Home</p>
         </div>
         <div className="video">
-          {video.length==0 ? <ReactPlayer
-            url={`https://www.youtube.com/watch?v=${video}`}
-            width="100%"
-            height="100%"
-          /> : <div>
-        <p>Sorry</p>
-       </div>}
-       
+          {Object.keys(video).length === 0  ? (
+            <div className="noData">
+              <p>Sorry | No Video Found</p>
+            </div>
+          ) : (
+            <ReactPlayer
+              url={`https://www.youtube.com/watch?v=${video}`}
+              width="100%"
+              height="100%"
+            />
+          )}
         </div>
         <div className="movie">
           <div className="image">
@@ -130,14 +135,6 @@ const Details = () => {
               <p>Overview</p>
               <p>{overview}</p>
             </div>
-            {/* <div className="companies">
-              <p>Production Companies</p>
-              <div className="companyNames">
-                {production_companies?.slice(0, 2).map((item, index) => (
-                  <p key={index}>{item?.name}</p>
-                ))}
-              </div>
-            </div> */}
           </div>
         </div>
         <MovieDetails
