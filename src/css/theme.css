@@ -5,7 +5,8 @@
   --color-purple-light: #a59aac;
 
   /* Black Shades */
-  --color-black-dark: #1b002a;
+  --color-black: #000000;
+  --color-black-large: #1b002a;
   --color-black-medium: #1a0029;
   --color-black-light: #190027;
 
@@ -25,4 +26,19 @@
 
   /* Gray Shades */
   --color-gray-dark: #707cb4;
+
+  /* White */
+  --color-white: #FFFFFF;
+
+   /* Title Color */
+   --color-title1:rgba(0, 0, 0, 0.69);
+   --color-title2:rgba(36, 18, 58, 0.76);
+
+   /* Navbar Color */
+--color-nav1:rgba(255, 255, 255, 0.63);
+--color-nav2:rgba(255, 255, 255, 0);
+ /* Margin Size */
+ --margin-large: 60px;
+ --margin-medium: 45px;
+ --margin-small: 22.5px;
 }

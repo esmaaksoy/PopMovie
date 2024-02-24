@@ -58,6 +58,7 @@ const Details = () => {
   const hours = Math.floor(runtime / 60);
   const minutes = runtime % 60;
   const formattedRuntime = `${hours}h ${minutes}min`;
+  console.log(movieDetail)
   return (
     <>
       <Helmet>
@@ -68,6 +69,13 @@ const Details = () => {
         <div className="homeIcon" onClick={() => navigate("/")}>
           <LuPopcorn className="icon" />
           <p>Home</p>
+        </div>
+        <div className="video">
+          <ReactPlayer
+            url={`https://www.youtube.com/watch?v=${video}`}
+            width="100%"
+            height="100%"
+          />
         </div>
         <div className="movie">
           <div className="image">
@@ -95,9 +103,9 @@ const Details = () => {
 
               <div>
                 {spoken_languages?.slice(0, 1).map((item) => (
-                  <p className="content">{item?.name}</p>
+                  <p className="content">{item?.english_name}</p>
                 ))}
-                <p>Langues</p>
+                <p>Languages</p>
               </div>
               <div>
                 <p className="content">{formattedRuntime}</p>
@@ -111,20 +119,14 @@ const Details = () => {
             <div className="companies">
               <p>Production Companies</p>
               <div className="companyNames">
-                {production_companies?.slice(0, 3).map((item) => (
+                {production_companies?.slice(0, 2).map((item) => (
                   <p>{item?.name}</p>
                 ))}
               </div>
             </div>
           </div>
         </div>
-        <div className="video">
-          <ReactPlayer
-            url={`https://www.youtube.com/watch?v=${video}`}
-            width="100%"
-            height="100%"
-          />
-        </div>
+      
       </div>
     </>
   );
